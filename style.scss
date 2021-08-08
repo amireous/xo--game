@@ -1,0 +1,88 @@
+$backgroundColor: #f6f6f6;
+$primaryWhite: #fff;
+$primaryPurple: #a55eea;
+$boxShadow: 3px 3px 5px rgba(119, 119, 119, 0.3), -3px -3px 5px $primaryWhite;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $backgroundColor;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $backgroundColor;
+  box-shadow: $boxShadow;
+  border-radius: 10px;
+  padding: 1.5rem;
+
+  .player-turn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    padding: 2rem 1rem 0.5rem;
+
+    p {
+      font-size: 1.5rem;
+    }
+    .current-player {
+      font-size: 2rem;
+      padding: 0 0.5rem;
+      color: $primaryPurple;
+      transition: 0.5s all;
+    }
+  }
+
+  .game-board {
+    width: 300px;
+    height: 300px;
+    background-color: $primaryPurple;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 4px;
+    margin: 2rem;
+  }
+  .box {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    font-weight: bold;
+    background-color: $backgroundColor;
+    cursor: pointer;
+    transition: 0.5s all;
+  }
+
+  .reset-btn {
+    margin: 2rem;
+    padding: 0.25rem 1.5rem;
+    font-family: "Poppins";
+    font-weight: bold;
+    color: $primaryPurple;
+    box-shadow: $boxShadow;
+    border: none;
+    border-radius: 2px;
+    background-color: $backgroundColor;
+
+    &:active {
+      background-color: rgba(87, 87, 87, 0.199);
+    }
+  }
+}

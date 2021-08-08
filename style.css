@@ -1,0 +1,121 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #f6f6f6;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #f6f6f6;
+  -webkit-box-shadow: 3px 3px 5px rgba(119, 119, 119, 0.3), -3px -3px 5px #fff;
+          box-shadow: 3px 3px 5px rgba(119, 119, 119, 0.3), -3px -3px 5px #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.container .player-turn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: bold;
+  padding: 2rem 1rem 0.5rem;
+}
+
+.container .player-turn p {
+  font-size: 1.5rem;
+}
+
+.container .player-turn .current-player {
+  font-size: 2rem;
+  padding: 0 0.5rem;
+  color: #a55eea;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.container .game-board {
+  width: 300px;
+  height: 300px;
+  background-color: #a55eea;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4px;
+  margin: 2rem;
+}
+
+.container .box {
+  width: 100px;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 4rem;
+  font-weight: bold;
+  background-color: #f6f6f6;
+  cursor: pointer;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.container .reset-btn {
+  margin: 2rem;
+  padding: 0.25rem 1.5rem;
+  font-family: "Poppins";
+  font-weight: bold;
+  color: #a55eea;
+  -webkit-box-shadow: 3px 3px 5px rgba(119, 119, 119, 0.3), -3px -3px 5px #fff;
+          box-shadow: 3px 3px 5px rgba(119, 119, 119, 0.3), -3px -3px 5px #fff;
+  border: none;
+  border-radius: 2px;
+  background-color: #f6f6f6;
+}
+
+.container .reset-btn:active {
+  background-color: rgba(87, 87, 87, 0.199);
+}
+/*# sourceMappingURL=style.css.map */
