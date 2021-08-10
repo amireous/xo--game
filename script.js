@@ -10,24 +10,34 @@ let playerO = "O";
 let playerX = "X";
 let activePlayer = playerO;
 
+let playing = true;
+
 const boxClicked = (e) => {
   const id = e.target.id;
+  if (playing) {
+    if (!playerChooses[id]) {
+      playerChooses[id] = activePlayer;
+      e.target.textContent = activePlayer;
 
-  if (!playerChooses[id]) {
-    playerChooses[id] = activePlayer;
-    e.target.textContent = activePlayer;
+      if (!playerChooses.includes(0)) {
+        title.textContent = "DRAW 💥";
+      }
 
-    if (playerWon()) {
-      title.textContent = `Player ${activePlayer} WON THE GAME`;
-      return;
+      if (playerWon()) {
+        title.textContent = `Player ${activePlayer} WON THE GAME 🎉`;
+        playing = false;
+        return;
+      }
+      activePlayer = activePlayer === playerO ? playerX : playerO;
+      currentPlayer.textContent = activePlayer;
     }
-    activePlayer = activePlayer === playerO ? playerX : playerO;
-    currentPlayer.textContent = activePlayer;
   }
 };
 
 boxes.forEach((box) => {
-  box.addEventListener("click", boxClicked);
+  if (playing) {
+    box.addEventListener("click", boxClicked);
+  }
 });
 
 const playerWon = function () {
@@ -47,6 +57,12 @@ const playerWon = function () {
     if (
       playerChooses[4] === activePlayer &&
       playerChooses[8] === activePlayer
+    ) {
+      return true;
+    }
+    if (
+      playerChooses[6] === activePlayer &&
+      playerChooses[7] === activePlayer
     ) {
       return true;
     }
@@ -78,6 +94,12 @@ const playerWon = function () {
     ) {
       return true;
     }
+    if (
+      playerChooses[2] === activePlayer &&
+      playerChooses[6] === activePlayer
+    ) {
+      return true;
+    }
   }
 };
 resetBtn.addEventListener("click", function () {
@@ -89,4 +111,5 @@ resetBtn.addEventListener("click", function () {
 
   activePlayer = playerO;
   currentPlayer.textContent = activePlayer;
+  playing = true;
 });
